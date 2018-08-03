@@ -86,14 +86,6 @@ hbs.registerHelper('screamIt', (text) => {
 // });
 
 
-// // Sending JSON:
-// app.get('/bad', (req, res) => {
-//   res.send({
-//     errorMessage: 'Unable to fulfill request!'
-  // });
-// });
-
-
 ///////////////////////
 
 
@@ -116,6 +108,13 @@ app.get('/projects', (req, res) => {
   res.render('projects.hbs', {
     pageTitle: 'My Projects!',
     welcomeMessage: 'Following are links to some of my projects!.',
+  });
+});
+
+// Sending JSON:
+app.get('/bad', (req, res) => {
+  res.send({
+    errorMessage: 'Unable to fulfill request!'
   });
 });
 
