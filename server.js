@@ -102,17 +102,20 @@ app.get('/', (req, res) => {
   res.render('home.hbs', {
     pageTitle: 'Home Page',
     welcomeMessage: 'Welcome to my website!',
-    // currentYear: new Date().getFullYear(),
-    publisher: 'NewUp Developments'
   });
 });
 
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Me!',
-    welcomeMessage: 'Information about me and my servies.',
-    // currentYear: new Date().getFullYear(),
-    publisher: 'NewUp Developments'
+    welcomeMessage: 'Information about me and my services.',
+  });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'My Projects!',
+    welcomeMessage: 'Following are links to some of my projects!.',
   });
 });
 
@@ -121,11 +124,12 @@ app.get('/about', (req, res) => {
 // Bind app to local port:
 app.listen(port, () => {
   console.log(`Server is up on port ${port}!`);
-  console.log("----------------")
+  console.log("----------------");
 });
+
 
 // In terminal: nodemon server.js to start wev-server:
 
 
-
+// Exit gracefully:
 process.on('SIGINT', () => { console.log("Bye bye!"); process.exit(); });
