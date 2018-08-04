@@ -1,0 +1,58 @@
+Deploy Express Application to Heroku:
+
+heroku.com
+
+Install Heroku CLI:
+  sudo snap install heroku --classic
+
+Check Version:
+  heroku -v
+
+View Commands:
+  heroku --help
+
+Login to Heroku:
+  heroku login
+
+Add ssh key to Heroku:
+  heroku keys:add
+
+List heroku ssh keys:
+  heroku keys
+
+Remove ssh keys:
+  heroku keys:remove email
+
+Test ssh key:
+  ssh -v git@heroku.com
+  (look for Authentication succeeded)
+
+Adjust application code:
+  - Create dynamic port:
+    const port = process.env.PORT || 3000;
+
+  - Bind app to port:
+    app.listen(port, () => {
+      console.log(`Server is up on port ${port}!`);
+      console.log("----------------");
+    });
+
+  - Add npm script to package.json:
+    "start": "node filename.js"
+
+
+*Make sure current app has been committed to github*
+
+*Application must have its own repository - git files etc*
+
+Create new Heroku app; Add Heroku remote branch to repository:
+  heroku create
+
+View remote branches:
+  git branch -r
+
+Deploy app:
+  git push heroku
+
+Open app in browser:
+  heroku open
